@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(to right, rgb(70, 0, 128), rgb(93, 18, 155), rgb(0,0,0));
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+/*Tela de login*/
+.login{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: aliceblue;
+    border: 2px solid rgb(0, 0, 0);
+    height: 320px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+}
+
+.login.entrar {
+    color: blue;
+    height: 10px;
+    width: 5px;
+}
+button {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    color: black;
+}
+button:hover{
+    background-color: rgb(49, 49, 49);
+}

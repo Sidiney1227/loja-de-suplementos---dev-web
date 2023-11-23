@@ -1,0 +1,101 @@
+body {
+    background-image: linear-gradient(to right, rgb(70, 0, 128), rgb(93, 18, 155), rgb(0,0,0));
+    margin: 0;
+}
+
+.conteiner {
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 1920px;
+    width: auto;
+    height: 70px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1;
+    border-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+nav::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.nav-conteiner ul{
+    float: right;
+    height: 100px;
+    line-height: 100px;
+    margin: 0;
+}
+.nav-conteiner li{
+    list-style: none;
+    float: left;
+    margin: 0 15px;
+}
+.nav-conteiner li a{
+   text-decoration: none;
+    color: #330fb4;
+    transition: .5s;
+}
+.nav-conteiner li a{
+     color: #ffffff;
+ }
+header {
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+
+.suplemento img{
+    width: 25%; /* 50% da largura do elemento pai */
+    height: auto; /* A altura se ajustará automaticamente de acordo com a largura */
+    object-fit: cover;
+    border: 2px solid#4e02ff;
+    border-radius: 15px;
+    position: absolute;
+    top: 20%;
+    left: auto;
+    float: right; /* Faz a imagem flutuar para a direita */
+    margin-left: 100px; /* Adiciona um espaço à esquerda da imagem para evitar que o conteúdo fique muito próximo */
+
+}
+
+.texto1{
+    color: white;
+}
+
+.conteiner2 {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Quebra para a próxima linha quando necessário */
+}
+
+.produto {
+    margin-right: 50px; /* Espaço entre as imagens */
+    background-color: #5b5a5c;
+    margin-top: 30px; /* Move a div para baixo 10px */
+    
+}
+
+.produto img {
+    width: 250px; /* Largura desejada */
+    height: auto; /* Mantém a proporção original */
+    display: block; /* Remove espaços extras ao redor da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+h2 {
+    background-color: rgb(214, 214, 214);
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

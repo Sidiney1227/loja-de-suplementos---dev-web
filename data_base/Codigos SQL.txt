@@ -1,0 +1,84 @@
+CREATE TABLE cliente (
+    ID SERIAL PRIMARY KEY,
+    NOME VARCHAR(45) NOT NULL,
+    USUARIO VARCHAR(15) NOT NULL,
+    EMAIL VARCHAR(30) NOT NULL,
+    TELEFONE VARCHAR(15) NOT NULL,
+    ISEXO VARCHAR(15) NOT NULL,
+    DATA_DE_NASCIMENTO DATE NOT NULL,
+    CIDADE VARCHAR(45) NOT NULL,
+    CEP INT NOT NULL,
+    ENDERECO VARCHAR(45) NOT NULL,
+    PASSWORD VARCHAR(45) NOT NULL
+);
+
+
+
+-- Inserir primeiro conjunto de dados
+INSERT INTO cliente (NOME, USUARIO, EMAIL, TELEFONE, ISEXO, DATA_DE_NASCIMENTO, CIDADE, CEP, ENDERECO, PASSWORD)
+VALUES ('João Silva', 'joao123', 'joao.silva@email.com', '555-1234', 'Masculino', '1990-01-15', 'São Paulo', 123456, 'Rua A', 'senha123');
+
+-- Inserir segundo conjunto de dados
+INSERT INTO cliente (NOME, USUARIO, EMAIL, TELEFONE, ISEXO, DATA_DE_NASCIMENTO, CIDADE, CEP, ENDERECO, PASSWORD)
+VALUES ('Maria Santos', 'maria456', 'maria.santos@email.com', '555-5678', 'Feminino', '1985-03-20', 'Rio de Janeiro', 789012, 'Avenida B', 'senha456');
+
+-- Inserir terceiro conjunto de dados
+INSERT INTO cliente (NOME, USUARIO, EMAIL, TELEFONE, ISEXO, DATA_DE_NASCIMENTO, CIDADE, CEP, ENDERECO, PASSWORD)
+VALUES ('Carlos Pereira', 'carlos789', 'carlos.pereira@email.com', '555-9876', 'Masculino', '1995-07-10', 'Belo Horizonte', 345678, 'Rua C', 'senha789');
+
+-- Inserir quarto conjunto de dados
+INSERT INTO cliente (NOME, USUARIO, EMAIL, TELEFONE, ISEXO, DATA_DE_NASCIMENTO, CIDADE, CEP, ENDERECO, PASSWORD)
+VALUES ('Ana Souza', 'ana1011', 'ana.souza@email.com', '555-5432', 'Feminino', '1992-09-05', 'Curitiba', 567890, 'Avenida D', 'senha1011');
+
+CREATE TABLE compra (
+    ID_COMPRA SERIAL PRIMARY KEY,
+    ID_CLIENTE INT NOT NULL,
+    ID_PRODUTO INT NOT NULL,
+    QUANTIDADE INT NOT NULL,
+    VALOR_UN FLOAT NOT NULL,
+    VALOR_TOTAL FLOAT NOT NULL,
+    DATA_DA_COMPRA DATE NOT NULL,
+    HORA_DA_COMPRA TIME NOT NULL,
+    FORMA_DE_PAGAMENTO VARCHAR(15) NOT NULL,
+    FOREIGN KEY (ID_CLIENTE) REFERENCES cliente (ID),
+    FOREIGN KEY (ID_PRODUTO) REFERENCES produto (ID_PRODUTO)
+);
+
+-- Inserir primeiro conjunto de dados
+INSERT INTO compra (ID_CLIENTE, ID_PRODUTO, QUANTIDADE, VALOR_UN, VALOR_TOTAL, DATA_DA_COMPRA, HORA_DA_COMPRA, FORMA_DE_PAGAMENTO)
+VALUES (1, 1, 2, 10.99, 21.98, '2023-09-28', '14:30:00', 'Cartão de Crédito');
+
+-- Inserir segundo conjunto de dados
+INSERT INTO compra (ID_CLIENTE, ID_PRODUTO, QUANTIDADE, VALOR_UN, VALOR_TOTAL, DATA_DA_COMPRA, HORA_DA_COMPRA, FORMA_DE_PAGAMENTO)
+VALUES (2, 3, 3, 8.95, 26.85, '2023-09-27', '16:45:00', 'PayPal');
+
+-- Inserir terceiro conjunto de dados
+INSERT INTO compra (ID_CLIENTE, ID_PRODUTO, QUANTIDADE, VALOR_UN, VALOR_TOTAL, DATA_DA_COMPRA, HORA_DA_COMPRA, FORMA_DE_PAGAMENTO)
+VALUES (3, 2, 1, 15.49, 15.49, '2023-09-26', '11:15:00', 'Boleto Bancário');
+
+-- Inserir quarto conjunto de dados
+INSERT INTO compra (ID_CLIENTE, ID_PRODUTO, QUANTIDADE, VALOR_UN, VALOR_TOTAL, DATA_DA_COMPRA, HORA_DA_COMPRA, FORMA_DE_PAGAMENTO)
+VALUES (4, 4, 4, 12.99, 51.96, '2023-09-25', '10:00:00', 'Transferência Bancária');
+
+CREATE TABLE produto (
+    ID_PRODUTO SERIAL PRIMARY KEY,
+    NOME_PRODUTO VARCHAR(25) NOT NULL,
+    VALOR_UN FLOAT NOT NULL,
+    QTD_DISPONIVEL INT NOT NULL
+);
+
+-- Inserir primeiro conjunto de dados
+INSERT INTO produto (NOME_PRODUTO, VALOR_UN, QTD_DISPONIVEL)
+VALUES ('Produto 1', 10.99, 100);
+
+-- Inserir segundo conjunto de dados
+INSERT INTO produto (NOME_PRODUTO, VALOR_UN, QTD_DISPONIVEL)
+VALUES ('Produto 2', 15.49, 75);
+
+-- Inserir terceiro conjunto de dados
+INSERT INTO produto (NOME_PRODUTO, VALOR_UN, QTD_DISPONIVEL)
+VALUES ('Produto 3', 8.95, 120);
+
+-- Inserir quarto conjunto de dados
+INSERT INTO produto (NOME_PRODUTO, VALOR_UN, QTD_DISPONIVEL)
+VALUES ('Produto 4', 12.99, 90);

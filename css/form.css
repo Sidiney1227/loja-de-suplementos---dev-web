@@ -1,0 +1,71 @@
+body {
+    background-image: linear-gradient(to right, rgb(70, 0, 128), rgb(93, 18, 155), rgb(0,0,0));
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+.box{
+    color: rgb(255, 249, 249);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    width: 20%;
+    
+}
+
+fieldset{
+    border: 3px solid white;
+}
+legend{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.inputBox{
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+    color: white;
+    background-color: white;
+}
+
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput{
+    top: 20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+#nascimento{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    background-color: aliceblue;
+}
+#submit:hover{
+    background-image: linear-gradient(to right, rgb(46, 2, 189), rgb(80,19,195));
+}
